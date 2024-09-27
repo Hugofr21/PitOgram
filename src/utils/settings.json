@@ -8,74 +8,74 @@
       {
         "filename": "Avance.mp4",
         "keycode": "9",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Avance.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/avanceDigit9.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Avance.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/avanceDigit9.png"
       },
       {
         "filename": "Destrave.mp4",
         "keycode": "*",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Destrave.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/travarAsterisk.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Destrave.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/travarAsterisk.png"
       },
       {
         "filename": "Eixo.mp4",
         "keycode": "Backspace",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Eixo.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/eixoBackspace.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Eixo.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/eixoBackspace.png"
       },
       {
         "filename": "Estacione.mp4",
         "keycode": "7",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Estacione.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/estacioneDigit7.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Estacione.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/estacioneDigit7.png"
       },
       {
         "filename": "Fossa.mp4",
         "keycode": "1",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Fossa.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/fossaDigit1.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Fossa.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/fossaDigit1.png"
       },
       {
         "filename": "Recue.mp4",
         "keycode": "8",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Recue.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/recuarDigit8.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Recue.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/recuarDigit8.png"
       },
       {
         "filename": "Stop.mp4",
         "keycode": "Enter",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Stop.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/stopEnter.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Stop.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/stopEnter.png"
       },
       {
         "filename": "Sequencia.mp4",
         "keycode": "2",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Sequencia.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/estacioneDigit2.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Sequencia.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/estacioneDigit2.png"
       },
       {
         "filename": "Play",
         "keycode": "3",
         "path": "../../assets/animations/Play",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/playDigit3.png"
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/playDigit3.png"
       },
       {
         "filename": "Trave.mp4",
         "keycode": "/",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Trave.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/destravarSlash.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Trave.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/destravarSlash.png"
       },
       {
         "filename": "Volante.mp4",
         "keycode": "NumLock",
-        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/animations/Volante.mp4",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/volanteNumlock.png"
+        "path": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/animations/Volante.mp4",
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/volanteNumlock.png"
       },
       {
         "filename": "Home",
         "keycode": "0",
         "path": "../../assets/animations/Home",
-        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/homeDigit0.png"
+        "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/homeDigit0.png"
       }
     ]
   }
