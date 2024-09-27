@@ -1,0 +1,88 @@
+{
+  "name": "pitogram",
+  "productName": "pitOgram",
+  "icon": "./src/assets/img/logo.png",
+  "version": "1.0.0",
+  "description": "Is an application intended for inspection center",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "keywords": [
+    "pitogram",
+    "inspection"
+  ],
+  "author": {
+    "name": "Hugo Rodrigues",
+    "email": "hugorodrigues1111@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "electron-localshortcut": "^3.2.1",
+    "electron-squirrel-startup": "^1.0.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "os": "^0.1.2",
+    "pitogram": "file:"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "@electron/rebuild": "^3.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "^27.3.11",
+    "electron-build": "^0.0.3"
+  },
+  "postinstall": "electron-rebuild",
+  "build": {
+    "appId": "com.Hugo.pitogram",
+    "win": {
+      "target": [
+        "squirrel"
+      ],
+      "icon": "./src/assets/img/logo.png"
+    },
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "category": "Utility",
+      "executableName": "pitogram",
+      "icon": "./src/assets/img/logo.png",
+      "files": [
+        "./src/**/*",
+        "./package.json"
+      ]
+    }
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "executableName": "pitogram"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "executableName": "pitogram"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

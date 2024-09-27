@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Upload</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="menu">
+        <ul class="menu-list">
+          <li class="menu-list-item">
+            <a
+              href="#"
+              class="step-item menu-icons"
+              data-target="video-section-settings"
+            >
+              Settings Keys and Animations
+            </a>
+          </li>
+          <li class="menu-list-item">
+            <a
+              href="#"
+              class="step-item menu-icons"
+              data-target="video-section-joystick"
+              >Joystick
+            </a>
+          </li>
+          <li class="menu-list-item">
+            <a
+              href="#"
+              class="step-item menu-icons"
+              data-target="video-section-logs"
+              >Logs
+            </a>
+          </li>
+          <li class="menu-list-item">
+            <a href="#" class="step-item menu-icons"
+                data-target="chart-section">Chart
+            </a>
+        </li>
+        </ul>
+        <div class="menu-list-right">
+          <button
+            id="btn-logout"
+            data-target="video-section-logout"
+            class="menu-list-right-item"
+          >
+            Logout
+          </button>
+        </div>
+      </nav>
+    </header>
+    <h1>Configure video</h1>
+    <main class="container">
+      <section class="row-settings-video-company">
+        <div class="header-section">
+          <h2>Upload Video Company</h2>
+          <p>MP4</p>
+        </div>
+        <div class="drop-section">
+          <div class="col">
+            <div class="cloud-icon">
+              <img src="../../assets/img/cloud.png" alt="cloud" />
+            </div>
+            <label
+              for="file-selector-input-mp4-company"
+              class="file-selector-label"
+              >Files video</label
+            >
+            <input
+              type="file"
+              id="file-selector-input-mp4-company"
+              class="file-selector-input"
+            />
+            <span class="erro-file"></span>
+          </div>
+          <div class="col">
+            <div class="drop-here">Drop Here</div>
+          </div>
+        </div>
+        <div class="list-section-company">
+          <div class="list-title">Uploaded Files</div>
+          <div class="list-company"></div>
+        </div>
+        <button id="submit-button-company" class="submit-button" type="button">
+          Submit
+        </button>
+      </section>
+      <dialog id="pop-up" class="pop-up-success">
+        <section class="container-success">
+          <header class="header-alert">
+            <div class="slide-progress-bar">
+              <div class="progress-bar" id="progress-bar"></div>
+            </div>
+          </header>
+          <main>
+            <div class="text">
+              <p class="text-p">Operation completed with success!</p>
+            </div>
+          </main>
+        </section>
+      </dialog>
+    </main>
+  </body>
+  <script
+    type="text/javascript"
+    src="../../render/confSettingsPath/fileVideoDefault.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="../../render/confSettingsPath/menu.js"
+  ></script>
+</html>

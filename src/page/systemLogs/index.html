@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>System Logs</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="menu">
+            <ul class="menu-list">
+                <li class="menu-list-item">
+                    <a href="#" class="step-item menu-icons" data-target="video-section-settings">
+                        Settings Keys and Animations
+                    </a>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#" class="step-item menu-icons" data-target="video-section-joystick">Joystick
+                    </a>
+                </li>
+                <li class="menu-list-item"><a href="#" class="step-item menu-icons"
+                        data-target="video-section-compay">Company video</a></li>
+                <li class="menu-list-item">
+                    <a href="#" class="step-item menu-icons" data-target="chart-section">Chart
+                    </a>
+                </li>
+            </ul>
+            <div class="menu-list-right">
+                <button id="btn-logout" class="menu-list-right-item" onclick="return logout()">Logout</button>
+            </div>
+        </nav>
+    </header>
+    <main class="container-log">
+        <section class="section-log-table ">
+            <table class="log-table">
+                <legend class="legend-log">System logs</legend>
+                <aside class="filter-buttons-right">
+                    <button class="filter-button btn-debug" data-severity="1">DEBUG</button>
+                    <button class="filter-button btn-info" data-severity="2">INFO</button>
+                    <button class="filter-button btn-warning" data-severity="3">WARNING</button>
+                    <button class="filter-button btn-error" data-severity="4">ERROR</button>
+                </aside>
+                <thead>
+                    <tr>
+                        <th class="timestamp">Timestamp</th>
+                        <th class="severity">Severity</th>
+                        <th class="message">Message</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-log">
+
+                </tbody>
+                <tfoot class="log-footer">
+                    <tr>
+                        <td colspan="3">Legendas:
+                            <span class="debug">Debug: </span>,
+                            <span class="info">Info: </span>,
+                            <span class="warning">Warning: </span>,
+                            <span class="error">Error: </span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <blockquote id="pop-up" class="pop-up-success">
+            <section class="container-success">
+                <header class="header-alert">
+                    <div class="slide-progress-bar">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </header>
+                <main>
+                    <div class="text">
+                        <p class="text-p"></p>
+                    </div>
+                </main>
+            </section>
+        </blockquote>
+    </main>
+</body>
+<script type="text/javascript" src="../../render/confSettingsPath/menu.js"></script>
+<script type="text/javascript" src="../../render/systemLogs/logs.js"></script>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Pit' Ogram</title>
+  <meta />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="menu">
+      <div class="menu-icons">
+        <button id="openModalButton">
+          <img class="fa fa-bluetooth" src="assets/img/bluetooth.svg" alt="bluetooth" />
+        </button>
+        <button id="openModalkeyboardMap">
+          <img class="fa fa-calculator" src="assets/img/calculator.png" alt="settings" />
+        </button>
+      </div>
+      <aside class="menu-drop-down-right" id="dropdownMenu">
+        <div class="dropdown-header">
+          <button class="dropdown-item" id="shutdownButton">
+            <img src="assets/img/shutdown.png" alt="Shutdown" />
+          </button>
+        </div>
+        <ul class="dropdown-menu" id="dropdownMenuList">
+          <li><button class="dropdown-item" id="shutdownAction">Desligar</button></li>
+          <li><button class="dropdown-item" id="restartAction">Reiniciar</button></li>
+        </ul>
+      </aside>      
+    </nav>
+  </header>
+
+  <main class="main-video">
+    <section class="section-video">
+      <video id="video-main" class="video-play" controls="false" muted loop="true" autoplay="true" preload="true">
+        <source src="" type="video/mp4" />
+      </video>
+    </section>
+
+    <!-- modal list devices bluettoth -->
+    <dialog id="modal-bluetooth" class="modal display-modal">
+      <section class="modal-bluetooth-section">
+        <header class="menu-bluetooth">
+          <nav class="nav-bluetooth">
+            <p class="title-bluetooth">Bluetooth</p>
+            <button class="close-modal close-button"></button>
+          </nav>
+        </header>
+
+        <main class="list-devices">
+          <article class="list-ckeck-devices">
+            <div class="left-column">
+              <p class="tile-devices">Os meus dispositivos</p>
+            </div>
+            <div class="right-column">
+              <input id="startBluetooth cancel" value="" class="toggle" type="checkbox" ckecked />
+            </div>
+          </article>
+
+          <table class="custom-table">
+
+          </table>
+        </main>
+      </section>
+    </dialog>
+
+    <!-- modal keyborad -->
+    <dialog id="modalkeyboard" class="modal display-modal">
+      <section class="modal-bluetooth-section modal-keycode-section">
+        <header class="menu-bluetooth">
+          <nav class="nav-bluetooth">
+            <p class="title-bluetooth">Mapa das configurações</p>
+            <button class="close-modal close-button-keycode"></button>
+          </nav>
+        </header>
+        <main class="list-keycodeMap">
+          <article class="img-keycodeMap">
+            <img class="img-keyboard" src="assets/img/keyboard.png" alt="keyboard" srcset="" />
+          </article>
+          <aside class="list-keycode-FileName">
+            <table class="custom-table-keycode">
+              <tbody>
+              </tbody>
+            </table>
+          </aside>
+        </main>
+      </section>
+    </dialog>
+  </main>
+  <footer class="footer-log">
+    <article class="articles-logo">
+      <img class="footer-logo-img" src="assets/img/logo-dtnivel.png" alt="logo" />
+    </article>
+  </footer>
+</body>
+
+<script type="text/javascript" crossorigin src="render/videoDefaults/index.js"></script>
+<script type="text/javascript" crossorigin src="render/modal/index.js"></script>
+<script type="text/javascript" crossorigin src="render/navigationKeycode/index.js"></script>
+<script type="text/javascript" crossorigin src="render/bluetoothAPI/index.js"></script>
+<script type="text/javascript" crossorigin src="render/mapKeyBoard/index.js"></script>
+
+</html>

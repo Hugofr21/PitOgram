@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="menu">
+            <ul class="menu-list">
+                <li class="menu-list-item">
+                    <a
+                      href="#"
+                      class="step-item menu-icons"
+                      data-target="video-section-settings"
+                    >
+                      Settings Keys and Animations
+                    </a>
+                  </li>
+                  
+                <li class="menu-list-item">
+                    <a href="#" class="step-item menu-icons menu-a"
+                        data-target="video-section-compay">Company video
+                    </a>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#" class="step-item menu-icons menu-a"
+                        data-target="video-section-joystick">Joystick
+                    </a>
+                </li>
+
+                <li class="menu-list-item">
+                    <a href="#" class="step-item menu-icons menu-a"
+                        data-target="video-section-logs">Logs
+                    </a>
+                </li>
+            </ul>
+            <div class="menu-list-right">
+                <button id="btn-logout" data-target="video-section-logout" class="menu-list-right-item">Logout</button>
+            </div>
+        </nav>
+    </header>
+    <div class="container-chart">
+        <aside class="menu-options-chart-vertical">
+            <h2 class="title-menu">Menu</h2>
+            <nav class="menu-nav-chart">
+                <ul class="menu-nav-chart-ul">
+                    <li class="nav-chart-li"><a href="#" class="nav-chart-a" data-chart="cpu">CPU</a></li>
+                    <li class="nav-chart-li"><a href="#"  class="nav-chart-a" data-chart="memory">Memory</a></li>
+                    <li class="nav-chart-li"><a href="#" class="nav-chart-a" data-chart="disk">Disk</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-chart">
+            <div class="grid-container">
+                <!-- CPU Chart -->
+                <div class="grid-item" id="cpu-chart">
+                    <div class="item1-center">
+                        <h1>CPU</h1>
+                    </div>
+                    <div class="show-chart">
+                        <svg class="area-chart" viewBox="0 0 104 50" preserveAspectRatio="none">
+                            <line x1="0" y1="45" x2="100" y2="45" class="axis"></line>
+                            <line x1="0" y1="0" x2="0" y2="45" class="axis"></line>
+                            <polyline class="area"
+                                points="">
+                            </polyline>
+                            <text x="5" y="48" font-size="3" fill="#000">0%</text>
+                            <text x="25" y="48" font-size="3" fill="#000">20%</text>
+                            <text x="50" y="48" font-size="3" fill="#000">50%</text>
+                            <text x="75" y="48" font-size="3" fill="#000">80%</text>
+                            <text x="95" y="48" font-size="3" fill="#000">100%</text>
+                        </svg>
+                    </div>
+                    <footer class="footer-info">
+                        <div class="info-hardware cpu ">
+                        </div>
+                    </footer>
+                </div>
+
+                <!-- Memory Chart -->
+                <div class="grid-item" id="memory-chart" style="display: none;">
+                    <div class="item1-center">
+                        <h1>Memory</h1>
+                    </div>
+                    <div class="show-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart blue">
+                            <path class="circle-bg" d="M18 2.0845
+                                   a 15.9155 15.9155 0 0 1 0 31.831
+                                   a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" stroke-dasharray="39, 100" d="M18 2.0845
+                                   a 15.9155 15.9155 0 0 1 0 31.831
+                                   a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">39%</text>
+                        </svg>
+                    </div>
+                    <footer class="footer-info">
+                        <div class="info-hardware memory">
+                        </div>
+                    </footer>
+                </div>
+
+                <!-- Disk Chart -->
+                <div class="grid-item" id="disk-chart" style="display: none;">
+                    <div class="item1-center">
+                        <h1>Disk</h1>
+                    </div>
+                    <div class="show-chart">
+                        <div class="radial-chart" data-percentage="39">
+                            <svg viewBox="0 0 36 36" class="circular-chart blue disk-chart">
+                                <path class="circle-bg" d="M18 2.0845
+                                   a 15.9155 15.9155 0 0 1 0 31.831
+                                   a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle circle-disk" stroke-dasharray="39, 100" d="M18 2.0845
+                                   a 15.9155 15.9155 0 0 1 0 31.831
+                                   a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage disk-percentage">39%</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <footer class="footer-info">
+                        <div class="info-hardware disk">
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="../../render/chart/index.js"></script>
+    <script type="text/javascript" src="../../render/confSettingsPath/menu.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "roles": {
+    "name": "admin",
+    "permissions": [
+      "create",
+      "read",
+      "update",
+      "delete"
+    ]
+  },
+  "cifra": {
+    "iv": "dc4eb5222db043affa2793b654ba8fb6",
+    "encryptedMessage": "40694124199abe814fe8cc7814b80207"
+  },
+  "pitOGRAM@gmail.com": {
+    "email": "pitOGRAM@gmail.com",
+    "password": "$2b$10$qD2cLuvhmcYiIytMD9YAx.ueFUuw6g6epD/BdSxnfMF45aQKdSVYO"
+  }
+}

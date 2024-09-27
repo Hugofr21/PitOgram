@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'montserrat-medium';
+    src: url('../../assets/font/montserrat/Montserrat-Medium.otf') format('otf');
+}
+
+:root {
+    --blue: #07499D;
+    --white: #fff;
+    --greyBackground: #9f9a9a;
+    --error: #cc3300;
+    --bacakground-error: #e99b81;
+}
+
+* {
+    font-family: "montserrat-medium";
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--greyBackground)
+}
+
+.main-alert {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    border-radius: 4px;
+    background-color: var(--white);
+    position: relative;
+    width: 491px;
+    padding: 20px;
+}
+
+.header-alert {
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 30px;
+    width: 100%;
+    border-radius: 4px;
+    background: var(--white);
+    position: absolute;
+}
+
+.header-title {
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.text-title {
+    font-size: 18px;
+    margin: 0;
+    text-align: center;
+}
+
+.text {
+    flex: 1;
+    /* Ocupa o espaço restante */
+}
+
+.text p {
+    font-size: 18px;
+    text-align: left;
+}
+
+.input-container {
+    width: 100%;
+    text-align: left;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:focus:invalid, .invalid{
+    background-color: var(--bacakground-error);
+    border: none;
+    outline: 2px solid var(--error);
+    border-radius: 2px;
+    outline: none;
+}
+
+.button-alert {
+    margin-top: 10px;
+    width: 463px;
+    background-color: var(--blue);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button-alert:hover {
+    opacity: 0.7;
+}
+
+
+@media (max-width: 768px) {
+    .alert-content {
+        flex-direction: column;
+    }
+
+    .icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

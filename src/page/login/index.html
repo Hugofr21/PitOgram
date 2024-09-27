@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" href="index.css">
+    <title>Sign In</title>
+</head>
+
+<body>
+    <main class="login">
+        <section class="login-img">
+            <img class="img-login-painel" src="paneil.png" alt="show painel img">
+            <div class="login-painel-text">
+                <p class="title-painel">Pit O’Gram</p>
+                <p class="text-p">Revolucionando a qualidade e a eficiência em centros de inspeção com software de vídeo e
+                     animação para automação de inspeções..</p>
+            </div>
+        </section>
+
+        <article class="form-login">
+            <div class="form-login-article">
+                <p class="title-login">Sign in</p>
+                <form class="form-login" onsubmit="return handleSubmit()">
+                    <div class="input-container">
+                        <i class="fa fa-envelope">
+                            <img src="envelope.png" alt="icon email" />
+                        </i>
+                        <input id="email" type="email" placeholder="Email">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock"><img src="key.png" alt="icon key" /></i>
+                        <input id="password" type="password" placeholder="Password">
+                    </div>
+                    <div class="button-container">
+                        <button id="submitButton" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </main>
+</body>
+<script type="text/javascript" src="../../render/login/login.js"></script>
+
+</html>

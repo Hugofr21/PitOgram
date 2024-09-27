@@ -1,0 +1,124 @@
+{
+  "joystick": [
+    {
+      "item": 0,
+      "keycodeEvent": "Digit0",
+      "keycodeHex": "48",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/homeDigit0.png"
+    },
+    {
+      "item": 1,
+      "keycodeEvent": "Digit1",
+      "keycodeHex": "49",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/fossaDigit1.png"
+    },
+    {
+      "item": 2,
+      "keycodeEvent": "Digit2",
+      "keycodeHex": "50",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/estacioneDigit2.png"
+    },
+    {
+      "item": 3,
+      "keycodeEvent": "Digit3",
+      "keycodeHex": "51",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/playDigit3.png"
+    },
+    {
+      "item": 4,
+      "keycodeEvent": "Digit4",
+      "keycodeHex": "52",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/estacioneDigit4.png"
+    },
+    {
+      "item": 5,
+      "keycodeEvent": "Digit5",
+      "keycodeHex": "53",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/fossaDigit5.png"
+    },
+    {
+      "item": 6,
+      "keycodeEvent": "Digit6",
+      "keycodeHex": "54",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/recueDigit6.png"
+    },
+    {
+      "item": 7,
+      "keycodeEvent": "Digit7",
+      "keycodeHex": "55",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/estacioneDigit7.png"
+    },
+    {
+      "item": 8,
+      "keycodeEvent": "Digit8",
+      "keycodeHex": "56",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/recuarDigit8.png"
+    },
+    {
+      "item": 9,
+      "keycodeEvent": "Digit9",
+      "keycodeHex": "57",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/avanceDigit9.png"
+    },
+    {
+      "item": 10,
+      "keycodeEvent": "Enter",
+      "keycodeHex": "13",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/stopEnter.png"
+    },
+    {
+      "item": 11,
+      "keycodeEvent": "Equal",
+      "keycodeHex": "187",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/stopEqual.png"
+    },
+    {
+      "item": 12,
+      "keycodeEvent": "Minus",
+      "keycodeHex": "189",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/eixoMinus.png"
+    },
+    {
+      "item": 13,
+      "keycodeEvent": "Slash",
+      "keycodeHex": "191",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/destravarSlash.png"
+    },
+    {
+      "item": 14,
+      "keycodeEvent": "Asterisk",
+      "keycodeHex": "56",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/travarAsterisk.png"
+    },
+    {
+      "item": 15,
+      "keycodeEvent": "Backspace",
+      "keycodeHex": "8",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/volanteBackspace.png"
+    },
+    {
+      "item": 16,
+      "keycodeEvent": "Escape",
+      "keycodeHex": "27",
+      "icon": "esc_icon"
+    },
+    {
+      "item": 17,
+      "keycodeEvent": "Period",
+      "keycodeHex": "190",
+      "icon": "dot_icon"
+    },
+    {
+      "item": 18,
+      "keycodeEvent": "Delete",
+      "keycodeHex": "46",
+      "icon": "delete_icon"
+    },
+    {
+      "item": 18,
+      "keycodeEvent": "NumLock",
+      "keycodeHex": "144",
+      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram-1/src/assets/keypadIcon/volanteNumlock.png"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Settings joystick</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="menu">
+        <ul class="menu-list">
+          <li class="menu-list-item">
+            <a
+              href="#"
+              class="step-item menu-icons"
+              data-target="video-section-settings"
+            >
+              Settings Keys and Animations</a
+            >
+          </li>
+
+          <li class="menu-list-item">
+            <a
+              href="#"
+              class="step-item menu-icons"
+              data-target="video-section-compay"
+              >Company video</a
+            >
+          </li>
+          <li class="menu-list-item">
+            <a
+              href="#"
+              class="step-item menu-icons"
+              data-target="video-section-logs"
+              >Logs
+            </a>
+          </li>
+          <li class="menu-list-item">
+            <a href="#" class="step-item menu-icons"
+                data-target="chart-section">Chart
+            </a>
+        </li>
+        </ul>
+        <div class="menu-list-right">
+          <button
+            id="btn-logout"
+            class="menu-list-right-item"
+            onclick="return logout()"
+          >
+            Logout
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="container-log">
+      <section class="section-log-table">
+        <table class="log-table">
+          <legend class="legend-log">Joystick</legend>
+          <thead>
+            <tr>
+              <th class="timestamp">Name</th>
+              <th class="severity">Keycode</th>
+              <th class="message">Icon</th>
+            </tr>
+          </thead>
+          <tbody class="tbody-log"></tbody>
+        </table>
+      </section>
+      <dialog id="pop-up" class="pop-up-success">
+        <section class="container-success">
+          <header class="header-alert">
+              <div class="slide-progress-bar">
+                  <div class="progress-bar" id="progress-bar"></div>
+              </div>
+          </header>
+          <main>
+              <div class="text">
+                  <p class="text-p"></p>
+              </div>
+          </main>
+      </section>
+      </dialog>
+    </main>
+  </body>
+  <script
+    type="text/javascript"
+    src="../../render/listconfigSettings/index.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="../../render/confSettingsPath/menu.js"
+  ></script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Sign up</title>
+</head>
+
+<body>
+    <main class="login">
+            <div class="form-login-article">
+                <p class="title-login">Sign up</p>
+                <form class="form-login" onsubmit="return handleSubmit()">
+                    <div class="input-container">
+                        <i class="fa fa-envelope">
+                            <img src="../login/envelope.png" alt="icon email" />
+                        </i>
+                        <input id="email" type="email" placeholder="Email">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock"><img src="../login/key.png" alt="icon key"/></i>
+                        <input id="password" type="password" placeholder="Password">
+                    </div>
+                    <div class="button-container">
+                        <button id="submitButton" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+    </main>
+</body>
+<script type="text/javascript" src="../../render/signUp/index.js"></script> 
+
+</html>
