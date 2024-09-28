@@ -52,6 +52,7 @@
                     <li class="nav-chart-li"><a href="#" class="nav-chart-a" data-chart="cpu">CPU</a></li>
                     <li class="nav-chart-li"><a href="#"  class="nav-chart-a" data-chart="memory">Memory</a></li>
                     <li class="nav-chart-li"><a href="#" class="nav-chart-a" data-chart="disk">Disk</a></li>
+                    <li class="nav-chart-li"><a href="#" class="nav-chart-a" data-chart="temperature">Temperature</a></li>
                 </ul>
             </nav>
         </aside>
@@ -127,6 +128,27 @@
                         </div>
                     </footer>
                 </div>
+
+                <div class="grid-item" id="temperature-chart" style="display: none;">
+                    <div class="item1-center">
+                        <h1>Temperature</h1>
+                    </div>
+                    <div class="show-chart">
+                        <svg class="area-chart-temperature" viewBox="0 0 104 50" preserveAspectRatio="none">
+                            <line x1="0" y1="45" x2="100" y2="45" class="axis"></line>
+                            <line x1="0" y1="0" x2="0" y2="45" class="axis"></line>
+                            <polyline class="area-temperature"
+                                points="">
+                            </polyline>
+                            <text x="5" y="48" font-size="3" fill="#000">0%</text>
+                            <text x="25" y="48" font-size="3" fill="#000">20%</text>
+                            <text x="50" y="48" font-size="3" fill="#000">50%</text>
+                            <text x="75" y="48" font-size="3" fill="#000">80%</text>
+                            <text x="95" y="48" font-size="3" fill="#000">100%</text>
+                        </svg>
+                    </div>
+                </div>
+
             </div>
         </main>
     </div>

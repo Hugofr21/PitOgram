@@ -359,6 +359,9 @@ contextBridge.exposeInMainWorld('SystemMonitoring', {
   diskAction: () => {
     ipcRenderer.send('system-disk');
   },
+  temperatureAction: () => {
+    ipcRenderer.send('system-temperature');
+  },
   onCpuData: (callback) => {
     ipcRenderer.on('cpu-data', (event, data) => callback(data));
   },
@@ -367,5 +370,8 @@ contextBridge.exposeInMainWorld('SystemMonitoring', {
   },
   onDiskData: (callback) => {
     ipcRenderer.on('disk-data', (event, data) => callback(data));
-  }
+  },
+  onTemperatureData: (callback) => {
+    ipcRenderer.on('temperature-data', (event, data) => callback(data));
+  },
 });

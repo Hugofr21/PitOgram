@@ -1,4 +1,4 @@
-const { cpuAction, memoryAction, diskAction, onCpuData, onMemoryData, onDiskData } = window.SystemMonitoring;
+const { cpuAction, memoryAction, diskAction,temperatureAction, onCpuData, onMemoryData, onDiskData, onTemperatureData } = window.SystemMonitoring;
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cpuAction();
         memoryAction();
         diskAction();
+        temperatureAction();
     }, 1000);
 
 
@@ -42,10 +43,33 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDiskInfo(disk);
 
     });
+
+    onTemperatureData((data) => {
+        console.log('temperature data: ', data);
+        const temperature = data;
+        updateTemperatureChart(data);
+    });
 });
 
 const historicalData = []; 
+const historicalTemperatureData = []; 
 const maxDataPoints = 20; 
+const minTemperature = 0;  
+const maxTemperature = 100;
+
+function updateTemperatureChart(temperature) {
+    historicalTemperatureData.push(temperature);
+    if (historicalData.length > maxDataPoints) {
+        historicalData.shift(); 
+    }
+    
+    const points = generatePointsTemperature(historicalTemperatureData);
+    console.log('points chart: ', points);
+    
+    const chart = document.querySelector('.area-chart-temperature');
+    const polyline = chart.querySelector('.area-temperature');
+    polyline.setAttribute('points', points);
+}
 
 function updateCpuChart(usage) {
     historicalData.push(usage); 
@@ -71,7 +95,19 @@ function generatePoints(data) {
         points += `${x},${y} `;
     });
     
-    // Close the area chart by adding the last point and returning to the baseline
+    points += `100,45 0,45`;
+    return points;
+}
+
+function generatePointsTemperature(data) {
+    const step = 100 / (data.length - 1);
+    let points = '';
+
+    data.forEach((temperature, index) => {
+        const x = index * step;
+        const y = 45 - ((temperature - minTemperature) / (maxTemperature - minTemperature)) * 45;
+        points += `${x},${y} `;
+    });
     points += `100,45 0,45`;
     return points;
 }
