@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit
+
 OVER_VOLTAGE="over_voltage=4"
 ARM_FREQ="arm_freq=1500"
 GPU_FREQ="gpu_freq=600"
@@ -7,8 +9,11 @@ GPU_MEM="gpu_mem=512"
 SD_OVERCLOCK="dtparam=sd_overclock=80"
 FAN_OVERLAY="dtoverlay=gpio-fan,gpiopin=18,active_low=1"
 DTOVERLAY="dtoverlay=piscope,dtoverlay=vc4-kms-v3d"
+DISABLE_WIFI="dtoverlay=disable-wifi"
 
 CONFIG_FILE="/boot/config.txt"
+
+sudo rfkill block wifi
 
 set_config() {
     local key_value="$1"
@@ -43,6 +48,7 @@ set_config "$GPU_MEM"
 set_config "$SD_OVERCLOCK"
 set_config "$FAN_OVERLAY"
 set_dtoverlay "$DTOVERLAY"
+set_dtoverlay "$DISABLE_WIFI"
 
 TEMPERATURE=$(vcgencmd measure_temp)
 echo "Temperatura atual: $TEMPERATURE"

@@ -86,7 +86,7 @@ function getDiskUsage(callback) {
             callback(null, disks);
         });
     } else if (platform === 'linux' || platform === 'darwin') {
-        exec('df -h', (err, stdout) => {
+        exec('df -h | grep "/dev/mmcblk0p1"', (err, stdout) => {
             if (err) {
                 return callback(err);
             }
@@ -128,9 +128,7 @@ function getTemperatureCpu(callback) {
                 callback(new Error('Temperature not found in vcgencmd output'));
             }
         });
-    } else {
-        callback(new Error('Platform not supported')); 
-    }
+    } 
 }
 
 module.exports = { getCpuUsage, getMemoryUsage, getDiskUsage, getCpuInfo, getTemperatureCpu }
