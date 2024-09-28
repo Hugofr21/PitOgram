@@ -91,7 +91,6 @@ function getDiskUsage(callback) {
                 return callback(err);
             }
             const lines = stdout.trim().split('\n');
-            console.log("line: ", lines)
             const disks = lines.map(line => {
                 const parts = line.match(/(\S+)/g);
                 const [filesystem, size, used, available, percent, mount] = parts;

@@ -4,25 +4,25 @@
       "item": 0,
       "keycodeEvent": "Digit0",
       "keycodeHex": "48",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/homeDigit0.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/homeDigit0.png"
     },
     {
       "item": 1,
       "keycodeEvent": "Digit1",
       "keycodeHex": "49",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/fossaDigit1.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/fossaDigit1.png"
     },
     {
       "item": 2,
       "keycodeEvent": "Digit2",
       "keycodeHex": "50",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/estacioneDigit2.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/estacioneDigit2.png"
     },
     {
       "item": 3,
       "keycodeEvent": "Digit3",
       "keycodeHex": "51",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/playDigit3.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/playDigit3.png"
     },
     {
       "item": 4,
@@ -46,25 +46,25 @@
       "item": 7,
       "keycodeEvent": "Digit7",
       "keycodeHex": "55",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/estacioneDigit7.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/estacioneDigit7.png"
     },
     {
       "item": 8,
       "keycodeEvent": "Digit8",
       "keycodeHex": "56",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/recuarDigit8.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/recuarDigit8.png"
     },
     {
       "item": 9,
       "keycodeEvent": "Digit9",
       "keycodeHex": "57",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/avanceDigit9.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/avanceDigit9.png"
     },
     {
       "item": 10,
       "keycodeEvent": "Enter",
       "keycodeHex": "13",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/stopEnter.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/stopEnter.png"
     },
     {
       "item": 11,
@@ -82,13 +82,13 @@
       "item": 13,
       "keycodeEvent": "Slash",
       "keycodeHex": "191",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/destravarSlash.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/destravarSlash.png"
     },
     {
       "item": 14,
       "keycodeEvent": "Asterisk",
       "keycodeHex": "56",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/travarAsterisk.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/travarAsterisk.png"
     },
     {
       "item": 15,
@@ -118,7 +118,7 @@
       "item": 18,
       "keycodeEvent": "NumLock",
       "keycodeHex": "144",
-      "icon": "C:/Users/hugor/OneDrive/Ambiente de Trabalho/PitOgram/client/PitOgram/src/assets/keypadIcon/volanteNumlock.png"
+      "icon": "/home/PitOgram/PitOgram/src/assets/keypadIcon/volanteNumlock.png"
     }
   ]
 }

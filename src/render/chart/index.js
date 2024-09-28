@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     onTemperatureData((data) => {
         console.log('temperature data: ', data);
-        const temperature = data;
+        updateTemperatureInfo(data);
         updateTemperatureChart(data);
     });
 });
@@ -57,7 +57,8 @@ const maxDataPoints = 20;
 const minTemperature = 0;  
 const maxTemperature = 100;
 
-function updateTemperatureChart(temperature) {
+function updateTemperatureChart(temperatureString) {
+    const temperature = parseFloat(temperatureString.replace('°C', ''));
     historicalTemperatureData.push(temperature);
     if (historicalData.length > maxDataPoints) {
         historicalData.shift(); 
@@ -119,6 +120,12 @@ function updateCpuInfo(data) {
         <p><strong>CPU Speed:</strong> ${data.speed} MHz</p>
         <p><strong>CPU Cores:</strong> ${data.cores}</p>
         <p><strong>CPU Usage:</strong> ${data.usage}%</p>
+    `;
+}
+
+function updateTemperatureInfo(data) {
+    document.querySelector('.temperature').innerHTML = `
+        <p><strong>Temperature: </strong> ${data}</p>
     `;
 }
 
