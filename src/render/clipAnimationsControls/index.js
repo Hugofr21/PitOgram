@@ -7,7 +7,7 @@ window.electronAPI2.readJSONFile('./settings.json');
 const { startListeningUpdates } = window.electronApiBluetooth;
 
  // custom event get keycode
- setInterval(startListeningUpdates, 1000);
+ setInterval(startListeningUpdates, 500);
 
 const otherkeycodeEvents = {
   'End': '1',

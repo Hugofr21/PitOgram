@@ -1,5 +1,5 @@
 const { startListeningUpdates } = window.electronApiBluetooth
-setInterval(startListeningUpdates, 1000);
+setInterval(startListeningUpdates, 500);
 
 let matchingCompany;
 

@@ -52,7 +52,8 @@ const {
   getCpuUsage,
   getMemoryUsage,
   getDiskUsage,
-  getCpuInfo
+  getCpuInfo,
+  getTemperatureCpu
 } = require('./api/services/monitoring/monitoring')
 
 

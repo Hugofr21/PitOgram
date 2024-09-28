@@ -21,7 +21,7 @@ function getCpuUsage(callback) {
 
     const idle = totalIdle / cpus.length;
     const total = totalTick / cpus.length;
-    
+
     const idleDifference = idle - previousIdle;
     const totalDifference = total - previousTotal;
     const usage = totalDifference > 0 ? 100 - (idleDifference / totalDifference) * 100 : 0;
@@ -38,7 +38,7 @@ function getCpuUsage(callback) {
 
 function getCpuInfo() {
     const cpus = os.cpus();
-    const speed = cpus[0].speed; 
+    const speed = cpus[0].speed;
     const model = cpus[0].model;
     const cores = cpus.length;
 
@@ -110,4 +110,16 @@ function getDiskUsage(callback) {
     }
 }
 
-module.exports = { getCpuUsage, getMemoryUsage, getDiskUsage, getCpuInfo }
+function getTemperatureCpu() {
+    if (platform === 'linux') {
+        exec('vcgencmd measure_temp', (err, stdout, stderr) => {
+            if (err || stderr) {
+                return callback(err || stderr);
+            }
+            const temp = parseFloat(stdout.match(/[\d.]+/)[0]);
+            callback(null, temp.toFixed(2) + '°C');
+        });
+    }
+}
+
+module.exports = { getCpuUsage, getMemoryUsage, getDiskUsage, getCpuInfo, getTemperatureCpu }

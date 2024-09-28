@@ -40,8 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     inputElement.addEventListener('keydown', function (event) {
-      if (event.key === '0') {
-        event.preventDefault(); 
+      if (event.key === '0' || event.key === 'Insert') {
         event.stopPropagation(); 
       }
     });
