@@ -110,21 +110,26 @@ function getDiskUsage(callback) {
     }
 }
 
-function getTemperatureCpu() {
+
+function getTemperatureCpu(callback) { 
+    const platform = os.platform();
+    
     if (platform === 'linux') {
         exec('vcgencmd measure_temp', (err, stdout, stderr) => {
             if (err || stderr) {
-                return callback(err || stderr);
+                return callback(err || stderr); 
             }
+
             const tempMatch = stdout.match(/temp=([\d.]+)'C/);
             if (tempMatch && tempMatch[1]) {
-                const temp = parseFloat(tempMatch[1]); 
-                callback(null, temp.toFixed(2) + '°C');
+                const temp = parseFloat(tempMatch[1]);
+                callback(null, temp + '°C'); 
             } else {
                 callback(new Error('Temperature not found in vcgencmd output'));
             }
-            callback(null, temp.toFixed(2) + '°C');
         });
+    } else {
+        callback(new Error('Platform not supported')); 
     }
 }
 

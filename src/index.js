@@ -502,14 +502,14 @@ function disableShortcuts(mainWindow) {
 
 function logTemperatureEvery3Seconds() {
   setInterval(() => {
-      getTemperatureCpu((err, temperature) => {
+      getTemperatureCpu((err, temperature) => { // Pass a callback function here
           if (err) {
               console.error('Error fetching CPU temperature:', err);
           } else {
               console.log('CPU Temperature:', temperature);
           }
       });
-  }, 3000);
+  }, 3000); // 3000 milliseconds = 3 seconds
 }
 
 logTemperatureEvery3Seconds();
