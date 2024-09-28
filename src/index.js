@@ -65,7 +65,7 @@ const createWindow = () => {
     width: '100%',
     height: '100%',
     zoomToPageWidth: true,
-    fullscreen: true,
+    // fullscreen: true,
     autoHideMenuBar: true,
     frameName: false,
     webPreferences: {

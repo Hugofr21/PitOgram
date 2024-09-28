@@ -12,19 +12,20 @@ document.addEventListener('DOMContentLoaded', function () {
         return false;
       }
   
+      
       window.electronAPILogin.sendCifraDataToMain(
         inputValue,
         data => {
           if (data.success) {
             inputElement.classList.remove('invalid');
-            attempts = 0;
+            attempts = 0; 
           }
         },
         error => {
           inputElement.classList.add('invalid');
-          attempts++;
+          attempts++; 
           if (attempts > MAX_ATTEMPTS) {
-            window.history.back();
+            window.history.back(); 
           }
         }
       );
@@ -32,40 +33,54 @@ document.addEventListener('DOMContentLoaded', function () {
       return true;
     });
   
+ 
     inputElement.addEventListener('input', function () {
       inputElement.classList.remove('invalid');
     });
+
+
+    inputElement.addEventListener('keydown', function (event) {
+      if (event.key === '0') {
+        event.preventDefault(); 
+        event.stopPropagation(); 
+      }
+    });
 });
-  
 
-function validateStringLength (value) {
-  return value.length >= 1 && value.length <= 25
+
+function validateStringLength(value) {
+  return value.length >= 1 && value.length <= 25;
 }
 
-let inactivityTimeout
-let lastActivityTime = Date.now()
-const inactivityThreshold = 30
+let inactivityTimeout;
+let lastActivityTime = Date.now();
+const inactivityThreshold = 30;
+let countdownInterval;
 
-function resetInactivity () {
-  lastActivityTime = Date.now()
-  clearTimeout(inactivityTimeout)
-  startInactivityCheck()
+
+function resetInactivity() {
+  lastActivityTime = Date.now();
+  clearTimeout(inactivityTimeout); 
+  clearInterval(countdownInterval); 
+  startInactivityCheck(); 
 }
 
-function startInactivityCheck () {
+
+function startInactivityCheck() {
   inactivityTimeout = setTimeout(() => {
-    window.location.href = '../../index.html'
-  }, inactivityThreshold * 1000)
+    window.location.href = '../../index.html'; 
+  }, inactivityThreshold * 1000);
 }
 
-startInactivityCheck()
+
+startInactivityCheck();
 
 document.addEventListener('keydown', event => {
-  const currentPage = window.location.href
+  const currentPage = window.location.href;
   if (currentPage.includes('/index.html')) {
-    resetInactivity()
+    resetInactivity(); 
   }
   if (event.key === '0' || event.key === 'Insert') {
-    window.history.back();
+    window.history.back(); 
   }
-})
+});
