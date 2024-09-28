@@ -116,7 +116,13 @@ function getTemperatureCpu() {
             if (err || stderr) {
                 return callback(err || stderr);
             }
-            const temp = parseFloat(stdout.match(/[\d.]+/)[0]);
+            const tempMatch = stdout.match(/temp=([\d.]+)'C/);
+            if (tempMatch && tempMatch[1]) {
+                const temp = parseFloat(tempMatch[1]); 
+                callback(null, temp.toFixed(2) + '°C');
+            } else {
+                callback(new Error('Temperature not found in vcgencmd output'));
+            }
             callback(null, temp.toFixed(2) + '°C');
         });
     }
