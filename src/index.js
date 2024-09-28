@@ -384,7 +384,7 @@ const createWindow = () => {
 
   ipcMain.on('system-disk', event => {
     console.clear()
-    const diskData = getDiskUsage((err, disks) => {
+    getDiskUsage((err, disks) => {
       if (err) {
         console.error('Erro ao obter uso do disco:', err.message)
         return
@@ -399,6 +399,18 @@ const createWindow = () => {
       //   console.log(`  Montado em: ${disk.mount}`)
       // });
       event.reply('disk-data', disks)
+    });
+  });
+
+  ipcMain.on('system-temperature', event => {
+    console.clear()
+    getTemperatureCpu((err, temperature) => { 
+        if (err) {
+            console.error('Error fetching CPU temperature:', err);
+        } else {
+            console.log('CPU Temperature:', temperature);
+        }
+        event.reply('temperature-data', temperature)
     });
   });
 
@@ -498,18 +510,3 @@ function disableShortcuts(mainWindow) {
 
   });
 }
-
-
-function logTemperatureEvery3Seconds() {
-  setInterval(() => {
-      getTemperatureCpu((err, temperature) => { // Pass a callback function here
-          if (err) {
-              console.error('Error fetching CPU temperature:', err);
-          } else {
-              console.log('CPU Temperature:', temperature);
-          }
-      });
-  }, 3000); // 3000 milliseconds = 3 seconds
-}
-
-logTemperatureEvery3Seconds();

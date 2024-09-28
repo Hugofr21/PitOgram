@@ -86,19 +86,21 @@ function getDiskUsage(callback) {
             callback(null, disks);
         });
     } else if (platform === 'linux' || platform === 'darwin') {
-        exec('df -h | grep "/dev/mmcblk0p1"', (err, stdout) => {
+        exec('df -h | grep "/dev/mmcblk0p2"', (err, stdout) => {
             if (err) {
                 return callback(err);
             }
-            const lines = stdout.trim().split('\n').slice(1);
+            const lines = stdout.trim().split('\n');
+            console.log("line: ", lines)
             const disks = lines.map(line => {
-                const [filesystem, size, used, available, percent, mount] = line.trim().split(/\s+/);
+                const parts = line.match(/(\S+)/g);
+                const [filesystem, size, used, available, percent, mount] = parts;
 
                 return {
                     filesystem: filesystem,
-                    size: size,
-                    used: used,
-                    available: available,
+                    size: convertToGB(size) + ' GB',     
+                    used: convertToGB(used) + ' GB',      
+                    available: convertToGB(available) + ' GB',
                     percent: percent,
                     mount: mount
                 };
@@ -129,6 +131,25 @@ function getTemperatureCpu(callback) {
             }
         });
     } 
+}
+
+function convertToGB(valueWithUnit) {
+    const units = {
+        'B': 1 / (1024 ** 3),         // Bytes para GB
+        'K': 1 / (1024 ** 2),         // KB para GB
+        'M': 1 / 1024,                // MB para GB
+        'G': 1                        // GB para GB
+    };
+
+   
+    const match = valueWithUnit.match(/([\d.]+)([BKMGT])/);
+    if (match) {
+        const value = parseFloat(match[1]);
+        const unit = match[2];
+        const factor = units[unit] || 1; 
+        return (value * factor).toFixed(2); 
+    }
+    return valueWithUnit; 
 }
 
 module.exports = { getCpuUsage, getMemoryUsage, getDiskUsage, getCpuInfo, getTemperatureCpu }
