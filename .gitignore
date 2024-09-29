@@ -99,3 +99,7 @@ out/
 out.zip
 
 file.txt
+
+src/api/data/joystick.json
+
+src/utils/settings.json

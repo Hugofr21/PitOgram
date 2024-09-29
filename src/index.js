@@ -4,7 +4,7 @@ const {
   ipcMain,
   session,
   ipcRenderer,
-  remote
+  remote,
 } = require('electron')
 const { Console, error } = require('node:console')
 const path = require('node:path')
@@ -66,18 +66,21 @@ const createWindow = () => {
     width: '100%',
     height: '100%',
     zoomToPageWidth: true,
-    // fullscreen: true,
+    fullscreen: true,
     autoHideMenuBar: true,
-    frameName: false,
+    frame: false,
+    minimizable: false,
+    alwaysOnTop: true,
+    skipTaskbar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       devTools: false
     }
   })
-
+  
   // desible menu default
-  mainWindow.removeMenu(); 
+  mainWindow.removeMenu();
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, './index.html'))
@@ -404,13 +407,13 @@ const createWindow = () => {
 
   ipcMain.on('system-temperature', event => {
     console.clear()
-    getTemperatureCpu((err, temperature) => { 
-        if (err) {
-            console.error('Error fetching CPU temperature:', err);
-        } else {
-            console.log('CPU Temperature:', temperature);
-        }
-        event.reply('temperature-data', temperature)
+    getTemperatureCpu((err, temperature) => {
+      if (err) {
+        console.error('Error fetching CPU temperature:', err);
+      } else {
+        console.log('CPU Temperature:', temperature);
+      }
+      event.reply('temperature-data', temperature)
     });
   });
 
@@ -473,10 +476,16 @@ function disableShortcuts(mainWindow) {
   for (let index = 1; index <= 12; index++) {
     localShortcut.register(mainWindow, `F${index}`, () => { });
   }
-  
+
   const shortcutsToDisable = [
     'Shift', 'Alt', 'Shift+Alt', 'Shift+Ctrl',
-    'Alt+Ctrl', 'Shift+Alt+Ctrl', 'Shift+Alt+Delete'
+    'Alt+Ctrl', 'Shift+Alt+Ctrl', 'Shift+Alt+Delete', 'Alt+F4', 'Alt+Tab',
+    'CommandOrControl+A', 'CommandOrControl+C', 'CommandOrControl+V', 'CommandOrControl+X',
+    'CommandOrControl+Z', 'CommandOrControl+Y', 'CommandOrControl+F', 'CommandOrControl+N',
+    'CommandOrControl+O', 'CommandOrControl+P', 'CommandOrControl+S', 'CommandOrControl+W',
+    'CommandOrControl+Q', 'CommandOrControl+R', 'CommandOrControl+T',
+    'CommandOrControl+Tab', 'CommandOrControl+Shift+Tab',
+    'CommandOrControl+M', 'CommandOrControl+H'
   ];
 
   // disable shortcuts
@@ -490,10 +499,14 @@ function disableShortcuts(mainWindow) {
       { key: 'F5' },
       { key: 'r', control: true },
       { key: 'F12' },
-      { key: 'Delete', control: true, alt: true }, 
-      { key: 'q', control: true },  
-      { key: 'F4', alt: true },   
-      { key: 'i', control: true, shift: true }, 
+      { key: 'Delete', control: true, alt: true },
+      { key: 'q', control: true },
+      { key: 'F4', alt: true },
+      { key: 'i', control: true, shift: true },
+      { key: 'i', control: true, shift: true },
+      { key: 'w', control: true },
+      { key: 'm', control: true },
+      { key: 'h', control: true },
     ];
 
     const isBlocked = blockedKeys.some(block =>
@@ -507,6 +520,17 @@ function disableShortcuts(mainWindow) {
     if (isBlocked) {
       event.preventDefault();
     }
+
+    mainWindow.setMenu(null);
+
+    mainWindow.webContents.on('context-menu', (e) => {
+      e.preventDefault();
+    });
+
+
+    mainWindow.on('minimize', (event) => {
+      event.preventDefault();
+    });
 
   });
 }
