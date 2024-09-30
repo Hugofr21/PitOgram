@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit
+
 USER=$(whoami)
 SERVICE_NAME="pitogram.service"
 SERVICE_PATH="/etc/systemd/system/${SERVICE_NAME}"

@@ -1,8 +1,9 @@
 #!/bin/bash
 
+USER=$(whoami)
 SERVICE_NAME="bumble-bluetooth.service"
 SERVICE_PATH="/etc/systemd/system/${SERVICE_NAME}"
-DIRECTORY_BUMBLE="/home/PitOgram/Bluetooth-Keypad/test/"
+DIRECTORY_BUMBLE="/home/$USER/Bluetooth-Keypad/test/"
 
 cleanup_service_bluetooth(){
     if [ -f "$SERVICE_PATH" ]; then
