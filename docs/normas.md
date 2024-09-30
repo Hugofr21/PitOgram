@@ -75,9 +75,9 @@ Como exemplo, aqui está um rascunho para a animação Primeiro.mp4:
 - Fade Out: Logotipo desaparece suavemente.
 
 # Adicionar Icon ao keypad 
-> Quando pretender adicionar mais ícones ao keypad, primeiro temos que pensar se existem mais keycodes vazias para adicionar ou se queremos trocar um ícone por outro.
+> Quando se pretender adicionar mais ícones ao teclado, é necessário primeiro verificar se existem mais códigos de tecla disponíveis para adicionar, ou se será necessário substituir um ícone existente.
 
-Aqui em baixo, visualiza-se a intenção de como deve ser respeitado o nome dos ícones. Para adicionar novos ícones, deve-se primeiro realizar uma ação. Por exemplo, se pretende adicionar o keycode Digit9, deve nomear o arquivo como: `avanceDigit9.png`.
+Em baixo, pode visualizar-se a forma correta de nomear os ícones. Para adicionar novos ícones, deve-se primeiro executar uma ação. Por exemplo, se pretender adicionar o código de tecla Digit9, deve nomear o ficheiro como: `avanceDigit9.png`.
 
  - Digit0 (0)
  - Digit1 (1)

@@ -1,3 +1,7 @@
+# Fase final  para iniciar o software
+Clique aqui após ter realizado todas as etapas de configurações essenciais para que o software seja executado com sucesso. Esta é a fase final para iniciar o software automaticamente após o login. Consulte a: [documentação final.](./docs/pre_installation.md)
+---
+
 # Normas para Vídeos de Animações
 Para mais detalhes sobre as normas de criação de vídeos, consulte a  [documentação das normas.](./docs/normas.md)
 ---
