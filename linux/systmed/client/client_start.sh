@@ -23,8 +23,9 @@ echo "Criando novo arquivo de serviço..."
 sudo bash -c "cat <<EOF > ${SERVICE_PATH}
 [Unit]
 Description=Pitogram
-After=network.target ${BUMBLE_SERVICE_NAME}
-Requires=${BUMBLE_SERVICE_NAME}
+After=network.target
+Before=graphical.target
+
 
 [Service]
 Type=simple

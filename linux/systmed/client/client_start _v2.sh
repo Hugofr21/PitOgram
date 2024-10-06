@@ -1,13 +1,11 @@
 #!/bin/bash
 
-set -o errexit
-
 USER=$(whoami)
 SERVICE_NAME="pitogram.service"
 SERVICE_PATH="/etc/systemd/system/${SERVICE_NAME}"
 DIRECTORY_APP="/home/$USER/PitOgram/out/pitOgram-linux-arm64"
 EXEC_PATH="$DIRECTORY_APP/pitogram"
-STARTUP_SCRIPT="/home/$USER/start_pitogram_and_desktop.sh"
+
 
 if [ -f "$SERVICE_PATH" ]; then
     echo "Removendo serviço existente..."
@@ -17,6 +15,7 @@ if [ -f "$SERVICE_PATH" ]; then
     sudo systemctl daemon-reload
     sudo systemctl reset-failed
 fi
+
 
 echo "Criando novo arquivo de serviço..."
 sudo bash -c "cat <<EOF > ${SERVICE_PATH}
@@ -37,32 +36,34 @@ Environment=DISPLAY=:0
 WantedBy=multi-user.target
 EOF"
 
+
 echo "Configurando permissões e habilitando o serviço..."
 sudo chmod 644 ${SERVICE_PATH}
 sudo systemctl daemon-reload
 sudo systemctl enable ${SERVICE_NAME}
 
+
+echo "Desabilitando o início automático do ambiente gráfico..."
+sudo systemctl set-default multi-user.target
+
+
 echo "Criando script de inicialização..."
+STARTUP_SCRIPT="/home/$USER/start_pitogram_and_desktop.sh"
 sudo bash -c "cat <<EOF > ${STARTUP_SCRIPT}
 #!/bin/bash
 sudo systemctl start ${SERVICE_NAME}
-sleep 5
-startx
+sleep 2 
+startx  
 EOF"
 sudo chmod +x ${STARTUP_SCRIPT}
 
 
 echo "Configurando .bashrc..."
-BASHRC_FILE="/home/$USER/.bashrc"
-if ! grep -q "$STARTUP_SCRIPT" "$BASHRC_FILE"; then
-    echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]]; then" >> $BASHRC_FILE
-    echo "    exec ${STARTUP_SCRIPT}" >> $BASHRC_FILE
-    echo "fi" >> $BASHRC_FILE
-else
-    echo "Configuração de inicialização já presente no .bashrc"
-fi
+echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]]; then" >> /home/$USER/.bashrc
+echo "    exec ${STARTUP_SCRIPT}" >> /home/$USER/.bashrc
+echo "fi" >> /home/$USER/.bashrc
 
 echo "Configuração concluída. O Pitogram será iniciado automaticamente antes do ambiente gráfico."
-echo "Reiniciando o sistema em 5 segundos..."
-sleep 5
+echo "Reiniciando o sistema em 10 segundos..."
+sleep 10
 sudo reboot
