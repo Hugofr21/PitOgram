@@ -29,8 +29,7 @@
     "electron-squirrel-startup": "^1.0.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "os": "^0.1.2",
-    "pitogram": "file:"
+    "os": "^0.1.2"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.4.2",
