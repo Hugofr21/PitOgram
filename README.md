@@ -93,3 +93,6 @@ Use o comando abaixo para construir a aplicação no Linux. A permissão de exec
 ```sh
 chmod +x /home/PitOgram/PitOgram/dist/PitOgram-linux-arm64/pitogram 
 ```
+
+## Requisitos futuros
+[Requisitos futuro](./docs/future_requirements.md)
