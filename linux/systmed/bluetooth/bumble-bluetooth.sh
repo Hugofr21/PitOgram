@@ -11,8 +11,8 @@ DIRECTORY_BUMBLE_MOVE="/opt/bumble-bluetooth"
 
 if [ ! -d "${DIRECTORY_BUMBLE_MOVE}" ]; then
    echo "Creating directory in /opt..."
-   sudo mkdir -p "${DIRECTORY_BUMBLE_MOVE}" 
-   sudo mv "${DIRECTORY_BUMBLE}"* "${DIRECTORY_BUMBLE_MOVE}/" 
+   sudo mkdir -p "${DIRECTORY_BUMBLE_MOVE}/test" 
+   sudo cp -r "${DIRECTORY_BUMBLE}"* "${DIRECTORY_BUMBLE_MOVE}/" 
 fi
 
 
@@ -40,7 +40,7 @@ if [ ! -d "${DIRECTORY_BUMBLE_MOVE}" ]; then
     exit 1
 fi
 
-m
+
 if ! groups $USER | grep -q '\bdocker\b'; then
     sudo groupadd -f docker || { echo "Failed to create the docker group"; exit 1; }  
     sudo usermod -aG docker $USER || { echo "Failed to add the user to the docker group"; exit 1; }  
