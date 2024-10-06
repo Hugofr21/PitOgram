@@ -12,7 +12,7 @@ DIRECTORY_BUMBLE_MOVE="/opt/bumble-bluetooth"
 if [ ! -d "${DIRECTORY_BUMBLE_MOVE}" ]; then
    echo "Creating directory in /opt..."
    sudo mkdir -p "${DIRECTORY_BUMBLE_MOVE}/test" 
-   sudo cp -r "${DIRECTORY_BUMBLE}"* "${DIRECTORY_BUMBLE_MOVE}/" 
+   sudo cp -r "/home/$USER/Bluetooth-Keypad/"* "${DIRECTORY_BUMBLE_MOVE}/" 
 fi
 
 
@@ -57,8 +57,8 @@ Requires=docker.service
 
 [Service]
 WorkingDirectory=${DIRECTORY_BUMBLE_MOVE}  
-ExecStart=/usr/bin/docker compose -f ${DIRECTORY_BUMBLE_MOVE}/docker-compose.yml up
-ExecStop=/usr/bin/docker compose -f ${DIRECTORY_BUMBLE_MOVE}/docker-compose.yml down  
+ExecStart=/usr/bin/docker compose -f ${DIRECTORY_BUMBLE_MOVE}/test/docker-compose.yml up
+ExecStop=/usr/bin/docker compose -f ${DIRECTORY_BUMBLE_MOVE}/test/docker-compose.yml down  
 Restart=always 
 
 [Install]
