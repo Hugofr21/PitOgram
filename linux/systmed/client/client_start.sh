@@ -23,7 +23,7 @@ echo "Criando novo arquivo de serviço..."
 sudo bash -c "cat <<EOF > ${SERVICE_PATH}
 [Unit]
 Description=Pitogram
-After=network.target graphical.target ${BUMBLE_SERVICE_NAME}
+After=network.target ${BUMBLE_SERVICE_NAME}
 Requires=${BUMBLE_SERVICE_NAME}
 
 [Service]
@@ -43,7 +43,7 @@ sudo chmod 644 ${SERVICE_PATH}
 sudo systemctl daemon-reload
 sudo systemctl enable ${SERVICE_NAME}
 
-echo "Configuração concluída. O Pitogram será iniciado automaticamente após o bumble-bluetooth."
+echo "Configuração concluída. O Pitogram será iniciado automaticamente após o Bumble Bluetooth."
 echo "Reiniciando o sistema em 5 segundos..."
 sleep 5
 sudo reboot
