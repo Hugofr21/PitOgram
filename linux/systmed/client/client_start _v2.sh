@@ -7,8 +7,7 @@ SERVICE_NAME="pitogram.service"
 SERVICE_PATH="/etc/systemd/system/${SERVICE_NAME}"
 DIRECTORY_APP="/home/$USER/PitOgram/out/pitOgram-linux-arm64"
 EXEC_PATH="$DIRECTORY_APP/pitogram"
-
-BUMBLE_SERVICE_NAME="bumble-bluetooth.service"
+STARTUP_SCRIPT="/home/$USER/start_pitogram_and_desktop.sh"
 
 if [ -f "$SERVICE_PATH" ]; then
     echo "Removendo serviço existente..."
@@ -23,8 +22,8 @@ echo "Criando novo arquivo de serviço..."
 sudo bash -c "cat <<EOF > ${SERVICE_PATH}
 [Unit]
 Description=Pitogram
-After=network.target graphical.target ${BUMBLE_SERVICE_NAME}
-Requires=${BUMBLE_SERVICE_NAME}
+After=network.target
+Before=graphical.target
 
 [Service]
 Type=simple
@@ -35,7 +34,7 @@ Restart=always
 Environment=DISPLAY=:0
 
 [Install]
-WantedBy=graphical.target
+WantedBy=multi-user.target
 EOF"
 
 echo "Configurando permissões e habilitando o serviço..."
@@ -43,7 +42,27 @@ sudo chmod 644 ${SERVICE_PATH}
 sudo systemctl daemon-reload
 sudo systemctl enable ${SERVICE_NAME}
 
-echo "Configuração concluída. O Pitogram será iniciado automaticamente após o bumble-bluetooth."
+echo "Criando script de inicialização..."
+sudo bash -c "cat <<EOF > ${STARTUP_SCRIPT}
+#!/bin/bash
+sudo systemctl start ${SERVICE_NAME}
+sleep 5
+startx
+EOF"
+sudo chmod +x ${STARTUP_SCRIPT}
+
+
+echo "Configurando .bashrc..."
+BASHRC_FILE="/home/$USER/.bashrc"
+if ! grep -q "$STARTUP_SCRIPT" "$BASHRC_FILE"; then
+    echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]]; then" >> $BASHRC_FILE
+    echo "    exec ${STARTUP_SCRIPT}" >> $BASHRC_FILE
+    echo "fi" >> $BASHRC_FILE
+else
+    echo "Configuração de inicialização já presente no .bashrc"
+fi
+
+echo "Configuração concluída. O Pitogram será iniciado automaticamente antes do ambiente gráfico."
 echo "Reiniciando o sistema em 5 segundos..."
 sleep 5
 sudo reboot
