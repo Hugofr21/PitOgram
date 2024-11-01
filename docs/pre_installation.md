@@ -19,5 +19,8 @@ Neste caso, como a aplicação não necessita de acesso Wi-Fi, não é necessár
 
 
 ## Serviço app client
+```
+bash /home/adm/PitOgram-main/linux/systmed/client_start.sh
+```
 Após executar este script, a aplicação será reiniciada automaticamente após o login.
 [Ative serviço da app](../linux/systmed/client/client_start.sh)
